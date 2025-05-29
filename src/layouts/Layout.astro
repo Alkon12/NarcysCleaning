@@ -1,14 +1,75 @@
-<!doctype html>
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{title} | Narcy's Cleaning</title>
+		<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 	</head>
-	<body>
-		<slot />
+	<body class="min-h-screen bg-white">
+		<header class="fixed w-full bg-white/80 backdrop-blur-sm z-50 border-b">
+			<nav class="container mx-auto px-4 py-4">
+				<div class="flex justify-between items-center">
+					<a href="/" class="flex items-center">
+						<img src="/2025-05-01.png" alt="Narcy's Cleaning Logo" class="h-24 w-auto">
+					</a>
+					<div class="hidden md:flex space-x-6">
+						<a href="/" class="text-gray-600 hover:text-primary-600">Home</a>
+						<a href="/#services" class="text-gray-600 hover:text-primary-600">Services</a>
+						<a href="/#testimonials" class="text-gray-600 hover:text-primary-600">Testimonials</a>
+						<a href="/#contact" class="text-gray-600 hover:text-primary-600">Contact</a>
+					</div>
+					<div class="md:hidden">
+						<!-- Mobile menu button will go here -->
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<main class="pt-20">
+			<slot />
+		</main>
+
+		<footer class="bg-gray-50 border-t mt-20">
+			<div class="container mx-auto px-4 py-12">
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+					<div>
+						<h3 class="text-lg font-semibold text-gray-900 mb-4">Narcy's Cleaning</h3>
+						<p class="text-gray-600">Professional cleaning services in Dallas, TX and surrounding areas.</p>
+					</div>
+					<div>
+						<h3 class="text-lg font-semibold text-gray-900 mb-4">Contact</h3>
+						<p class="text-gray-600">Phone: (214) 562-3960</p>
+					</div>
+					<div>
+						<h3 class="text-lg font-semibold text-gray-900 mb-4">Follow Us</h3>
+						<div class="flex space-x-4">
+							<a href="https://www.instagram.com/narcyscleaning_?igsh=N3cycmJhaGJvOWty" class="text-gray-600 hover:text-primary-600">
+								Instagram
+							</a>
+							<a href="https://www.facebook.com/share/1CCXN7PjWp/?mibextid=wwXIfr" class="text-gray-600 hover:text-primary-600">
+								Facebook
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="border-t mt-8 pt-8 text-center text-gray-600">
+					<p>&copy; {new Date().getFullYear()} Narcy's Cleaning. All rights reserved.</p>
+				</div>
+			</div>
+		</footer>
 	</body>
 </html>
 

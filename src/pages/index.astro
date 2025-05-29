@@ -1,11 +1,104 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Home">
+	<!-- Hero Section -->
+	<section class="bg-gradient-to-b from-primary-50 to-white py-20">
+		<div class="container mx-auto px-4">
+			<div class="max-w-3xl mx-auto text-center">
+				<h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+					Professional Cleaning Services in Dallas
+				</h1>
+				<p class="text-xl text-gray-600 mb-8">
+					Experience the difference with Narcy's Cleaning - your trusted partner for spotless homes and offices.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center">
+					<a href="tel:+12145623960" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700">
+						Call Now
+					</a>
+					<a href="https://wa.me/12145623960" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700">
+						WhatsApp
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Services Section -->
+	<section id="services" class="py-20">
+		<div class="container mx-auto px-4">
+			<h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Our Services</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+				<div class="bg-white p-6 rounded-lg shadow-sm border">
+					<h3 class="text-xl font-semibold text-gray-900 mb-4">House Cleaning</h3>
+					<p class="text-gray-600">Regular and deep cleaning services for your home, tailored to your needs.</p>
+				</div>
+				<div class="bg-white p-6 rounded-lg shadow-sm border">
+					<h3 class="text-xl font-semibold text-gray-900 mb-4">Office Cleaning</h3>
+					<p class="text-gray-600">Professional cleaning solutions for your workplace, maintaining a healthy environment.</p>
+				</div>
+				<div class="bg-white p-6 rounded-lg shadow-sm border">
+					<h3 class="text-xl font-semibold text-gray-900 mb-4">Carpet Cleaning</h3>
+					<p class="text-gray-600">Specialized carpet cleaning services to remove stains and refresh your carpets.</p>
+				</div>
+				<div class="bg-white p-6 rounded-lg shadow-sm border">
+					<h3 class="text-xl font-semibold text-gray-900 mb-4">Move-in/Move-out</h3>
+					<p class="text-gray-600">Comprehensive cleaning services for your moving needs, ensuring a fresh start.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Testimonials Section -->
+	<section id="testimonials" class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4">
+			<h2 class="text-3xl font-bold text-center text-gray-900 mb-12">What Our Clients Say</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<div class="bg-white p-6 rounded-lg shadow-sm">
+					<p class="text-gray-600 mb-4">"Narcy's Cleaning has been amazing! They always do a thorough job and are very professional."</p>
+					<p class="font-semibold text-gray-900">- Sarah M.</p>
+				</div>
+				<div class="bg-white p-6 rounded-lg shadow-sm">
+					<p class="text-gray-600 mb-4">"The best cleaning service in Dallas! They pay attention to every detail and are very reliable."</p>
+					<p class="font-semibold text-gray-900">- John D.</p>
+				</div>
+				<div class="bg-white p-6 rounded-lg shadow-sm">
+					<p class="text-gray-600 mb-4">"I've been using their services for my office for months now, and I couldn't be happier with the results."</p>
+					<p class="font-semibold text-gray-900">- Michael R.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Contact Section -->
+	<section id="contact" class="py-20">
+		<div class="container mx-auto px-4">
+			<h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Contact Us</h2>
+			<div class="max-w-2xl mx-auto">
+				<form class="space-y-6">
+					<div>
+						<label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+						<input type="text" id="name" name="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500">
+					</div>
+					<div>
+						<label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+						<input type="email" id="email" name="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500">
+					</div>
+					<div>
+						<label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+						<textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"></textarea>
+					</div>
+					<div>
+						<button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+							Send Message
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
 </Layout>
